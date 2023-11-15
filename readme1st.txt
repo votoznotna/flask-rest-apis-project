@@ -54,3 +54,18 @@ git init
 ls -la
 git status
 create .gitignore
+git add .
+git rm --cached schemas.py
+git add schemas.py
+
+git checkout -- app.py 
+# same as
+git restore app.py
+
+# unstage app.py
+gir reset HEAD app.py
+# or
+git restore --staged app.py
+
+# commit and add the message
+git commit -am "readme changes"
