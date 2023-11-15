@@ -40,16 +40,18 @@ https://jwt.io/
 
 pip3 install flask-migrate
 flask db init
-# delete ./instance/data.db
+#### delete ./instance/data.db
 
 flask db migrate
-# apply table to database instance/data.db
+#### apply table to database instance/data.db
 flask db upgrade 
 
-# add new 'description' field into items table and call migrate again
+#### add new 'description' field into items table and call migrate again
 flask db migrate
 flask db upgrade
 
+## Git usage
+'''
 git init
 ls -la
 git status
@@ -57,15 +59,20 @@ create .gitignore
 git add .
 git rm --cached schemas.py
 git add schemas.py
-
+''' 
+### same:
+'''
 git checkout -- app.py 
-# same as
 git restore app.py
+'''
 
-# unstage app.py
+### unstage app.py
+'''
 gir reset HEAD app.py
-# or
 git restore --staged app.py
+'''
 
-# commit and add the message
+#### commit and add the message
+'''
 git commit -am "readme changes"
+'''
