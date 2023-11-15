@@ -1,0 +1,10 @@
+flask==2.2.2
+flask-smorest
+python-dotenv
+marshmallow
+sqlalchemy
+flask-sqlalchemy
+Flask-JWT-Extended
+passlib
+flask-migrate
+Werkzeug==2.2.2
