@@ -106,7 +106,7 @@ def create_app(db_url=None):
     with app.app_context():
         import models  # noqa: F401
 
-        # db.create_all()
+        db.create_all()
 
     api.register_blueprint(UserBlueprint)
     api.register_blueprint(ItemBlueprint)
