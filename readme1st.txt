@@ -76,3 +76,11 @@ git restore --staged app.py
 '''
 git commit -am "readme changes"
 '''
+
+
+# Deployement
+
+https://dashboard.render.com/web/new
+testing with Insomnia: https://flask-rest-apis-project-mxl8.onrender.com
+
+https://dashboard.render.com/web/srv-clj4vfl8td7s73bvvj40
