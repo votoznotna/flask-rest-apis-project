@@ -1,6 +1,7 @@
 import os
 from flask.views import MethodView
 import requests
+from flask import current_app
 from flask_smorest import Blueprint, abort
 from flask_jwt_extended import (
     create_access_token,
@@ -16,6 +17,7 @@ from db import db
 from models import UserModel
 from schemas import UserSchema, UserRegisterSchema
 from blocklist import BLOCKLIST
+from tasks import send_user_registration_email
 
 
 blp = Blueprint("Users", "users", description="Operations on users")
@@ -53,11 +55,12 @@ class UserRegister(MethodView):
         db.session.add(user)
         db.session.commit()
 
-        send_simple_message(
-            to=user.email,
-            subject="Successfully signed up",
-            body=f"Hi {user.username}! You have successfully signed up to the Stores REST API.",
-        )
+        current_app.queue.enqueu(send_user_registration_email, user.email, user.username)
+        # send_simple_message(
+        #     to=user.email,
+        #     subject="Successfully signed up",
+        #     body=f"Hi {user.username}! You have successfully signed up to the Stores REST API.",
+        # )
 
         return {"message": "User created successfully."}, 201
 

@@ -135,3 +135,5 @@ and to Insomnia registration request
 
 # add the task queue with redis
 https://dashboard.render.com/new/redis
+pip3 install rq
+pip3 install redis

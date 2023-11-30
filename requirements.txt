@@ -11,3 +11,5 @@ Werkzeug==2.2.2
 gunicorn
 psycopg2
 requests
+redis
+rq
