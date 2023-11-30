@@ -132,3 +132,6 @@ add own email to https://app.mailgun.com/app/sending/domains/sandbox82607f6629e7
 and to Insomnia registration request
 
 "base_url": "https://flask-rest-apis-project-mxl8.onrender.com" update to "http://localhost:5005"
+
+# add the task queue with redis
+https://dashboard.render.com/new/redis
