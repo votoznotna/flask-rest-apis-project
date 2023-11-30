@@ -137,3 +137,10 @@ and to Insomnia registration request
 https://dashboard.render.com/new/redis
 pip3 install rq
 pip3 install redis
+1-st console
+>docker build -t rest-api-recording-email .
+2-d console
+>docker run -w /app rest-api-recording-email sh -c "rq worker -u rediss://red-clkge2kjtl8s73e4hl20:qWk8OEYc5piqRbT7gZzXgwUeF1QmjZYJ@oregon-redis.render.com:6379 emails"
+1-st console:
+>docker build -t rest-api-recording-email .
+>docker run -dp 5005:5000 -w /app -v "$(pwd):/app" rest-api-recording-email sh -c "flask run --host 0.0.0.0"
