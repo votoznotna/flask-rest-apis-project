@@ -113,3 +113,22 @@ tables in ElephantSQL should be created
 $ and do 
 flask db migration
 flask db upgrade
+
+# prod deployement
+https://dashboard.render.com/web/srv-clj4vfl8td7s73bvvj40/events
+
+# mail settings
+votoznotna@gmail.com
+https://app.mailgun.com/mg/dashboard
+pip3 install requests
+added email dependencies for model, schemas and resources
+flask db upgrade
+flask db migrate
+
+>docker build -t rest-api-recording-email . 
+>docker run -dp 5005:5000 -w /app -v "$(pwd):/app" rest-api-recording-email sh -c "flask run --host 0.0.0.0"  // for debug
+
+add own email to https://app.mailgun.com/app/sending/domains/sandbox82607f6629e743f1a7ceb435a967b426.mailgun.org
+and to Insomnia registration request
+
+"base_url": "https://flask-rest-apis-project-mxl8.onrender.com" update to "http://localhost:5005"
